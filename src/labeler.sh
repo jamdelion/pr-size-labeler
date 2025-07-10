@@ -48,15 +48,7 @@ labeler::label_for() {
   local -r l_max_size=${9}
   local -r xl_label="${10}"
 
-  if [ "$total_modifications" -lt "$xs_max_size" ]; then
-    label="$xs_label"
-  elif [ "$total_modifications" -lt "$s_max_size" ]; then
-    label="$s_label"
-  elif [ "$total_modifications" -lt "$m_max_size" ]; then
-    label="$m_label"
-  elif [ "$total_modifications" -lt "$l_max_size" ]; then
-    label="$l_label"
-  else
+  if [ "$total_modifications" -gt "$l_max_size" ]; then
     label="$xl_label"
   fi
 
